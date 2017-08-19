@@ -1,0 +1,35 @@
+.file-detail-view {
+  .date-control {
+    div {
+      width: 100%
+    }
+  }
+  .form-actions {
+    margin-top: 25px;
+    button {
+      margin-right: 10px;
+    }
+  }
+  .checkbox-group {
+    //margin-top: 10px;
+    //margin-bottom: 10px;
+    //margin-right: 8px;
+    .form-group {
+      display: inline-block;
+      margin-right: 8px;
+      .checkbox {
+        //display: inline;
+        label {
+          //display: inline;
+        }
+      }
+    }
+  }
+  .form-error {
+    color: red
+  }
+  .form-group {
+    min-height: 80px;
+    margin-bottom: 0px;
+  }
+}

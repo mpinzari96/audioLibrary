@@ -1,0 +1,131 @@
+///**
+// Revox overrides
+// Bootstrap overrides - We should not need theses
+// */
+//.content {
+//  padding-bottom: 0 !important;
+//}
+//
+//.pgn-wrapper {
+//  z-index: 2000 !important; //Fix for modals
+//}
+//
+//.truncate {
+//  white-space: nowrap;
+//  overflow: hidden;
+//  text-overflow: ellipsis;
+//}
+//
+//.container,
+//.container-fluid {
+//  height: 100%;
+//}
+//
+//.aob-btn-group {
+//  .btn {
+//    margin-right: 5px;
+//  }
+//}
+//
+//.primary-color-bg, .nav-tabs .active a {
+//  background-color: #1479fb !important;
+//}
+//
+//.nav-tabs .active a {
+//  color: #fff !important;
+//}
+//
+//.primary-color-text {
+//  color: #1479fb !important;
+//}
+//
+//.primary-color-border {
+//  border-color: #1479fb !important;
+//}
+//
+//.page-container {
+//  padding-left: 0;
+//}
+//
+//.nav-tabs-fillup > li > a:after {
+//  background: none repeat scroll 0 0 #1479fb !important;
+//  border: 1px solid #1479fb !important;
+//}
+//
+//.radio.radio-success input[type=radio]:checked + label:before {
+//  border-color: #1479fb
+//}
+//
+//.header {
+//  padding-right: 0;
+//}
+//
+//.tab-content {
+//
+//}
+//
+////Checkboxes
+//.checkbox label {
+//  font-size: 14px !important;
+//  margin-bottom: 2px;
+//}
+//
+///**
+//CK Editor
+// */
+//.cke_button__fieldbox {
+//  display: none !important;
+//}
+//
+//.cke_chrome {
+//  border: 1px solid #ccc !important;
+//}
+//
+///**
+//Select2 - Field type
+// */
+//.field-type-select2-wrapper .select2 {
+//  min-width: 200px;
+//}
+//
+///**
+//React Date Picker
+// */
+//.react-datepicker__input-container {
+//  display: block;
+//}
+//
+//$input-padding: 8px;
+//
+//@mixin input-font() {
+//  font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+//  font-size: 12px;
+//  font-weight: 300;
+//  line-height: 16px;
+//}
+//
+//@mixin placeholder-style() {
+//  color: #999;
+//  @include input-font();
+//}
+//
+//* {
+//  -webkit-box-sizing: border-box;
+//  -moz-box-sizing: border-box;
+//  box-sizing: border-box;
+//}
+//
+//input, textarea {
+//  display: block;
+//  width: 100%;
+//  padding: $input-padding;
+//  border: 1px solid #ccc;
+//}
+//
+//input {
+//  margin-bottom: 10px;
+//  background-color: #fff;
+//
+//  @include input-font();
+//}
+//

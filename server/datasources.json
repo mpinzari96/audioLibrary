@@ -1,0 +1,16 @@
+{
+  "db": {
+    "name": "db",
+    "connector": "memory"
+  },
+  "testresults": {
+    "host": "library.cysrnutlz2ka.us-east-2.rds.amazonaws.com",
+    "port": 3306,
+    "url": "",
+    "database": "audioLibrary",
+    "password": "library123",
+    "name": "library",
+    "user": "admin",
+    "connector": "mysql"
+  }
+}

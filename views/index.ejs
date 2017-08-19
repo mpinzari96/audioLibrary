@@ -1,0 +1,27 @@
+ <!doctype html>
+<html lang="en">
+<head><title>Audio Library</title>
+<meta name="viewport" content="width=device-width">
+<meta charset="utf-8">
+<link rel="shortcut icon" href="favicon.ico?v1">
+<link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+</head>
+<body class="" style="height: 100%">
+
+<div id="root" class="page-container"></div>
+<script>
+    let parsedConfig = JSON.parse('<%- configJSONString %>')
+    window.config = parsedConfig
+</script>
+
+<script type="text/javascript" src="/static/client/assets/vendor.js?<%= build && build.cacheBustValue %>"></script>
+<script type="text/javascript"src="/static/client/assets/app.js?<%= build && build.cacheBustValue %>"> </script>
+ <% if(build.NODE_ENV === 'development'){ %>
+<script src="http://localhost:35729/livereload.js"></script>
+<% } %> 
+</body>
+</html> 

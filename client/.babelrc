@@ -1,0 +1,27 @@
+{
+  "env": {
+    "development": {
+      "presets": [
+        "react",
+        "es2015",
+        "stage-1"
+      ],
+      "plugins": [
+        "transform-decorators-legacy",
+        "transform-class-properties"
+      ]
+    },
+    "test": {
+      "presets": [
+        "react",
+        "es2015",
+        "stage-1"
+      ],
+      "plugins": [
+//        "babel-plugin-remove-decorator:before",
+        "transform-decorators-legacy",
+        "transform-class-properties"
+      ]
+    }
+  }
+}

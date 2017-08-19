@@ -1,0 +1,19 @@
+version: 0.1
+env:
+  variables:
+    AWS_DEFAULT_REGION: "us-east-1"
+phases:
+  install:
+    commands:
+      - npm install -g grunt-cli
+      - npm install
+      - grunt install-client-dependencies
+      - grunt build-client
+  build:
+    commands:
+     
+  post_build:
+    commands:
+artifacts:
+  files:
+    - '**/*'

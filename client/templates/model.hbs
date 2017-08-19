@@ -1,0 +1,23 @@
+//Generated file - DO NOT MODIFY
+import { observable, computed, action } from "mobx"
+import { serializable, identifier, update, deserialize } from "serializr"
+import _ from "lodash"
+
+export default class {{name}}Base {
+    
+{{#propertyArray}}
+    @serializable @observable {{name}} = ""
+{{/propertyArray}}
+
+    static get __name__() {
+        return "{{name}}"
+    }
+
+    constructor({{#propertyArray}}{{name}}=""{{^last}}, {{/last}} {{/propertyArray}} ) {
+        
+{{#propertyArray}}
+        this.{{name}} = observable( )
+        this.{{name}} = {{name}}
+{{/propertyArray}}
+    }
+}

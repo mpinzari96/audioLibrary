@@ -1,0 +1,72 @@
+{
+  "_meta": {
+    "sources": [
+      "loopback/common/models",
+      "loopback/server/models",
+      "../common/models",
+      "./models",
+      "./node_modules/loopback-component-passport/lib/models"
+    ],
+    "mixins": [
+      "loopback/common/mixins",
+      "loopback/server/mixins",
+      "../common/mixins",
+      "./mixins"
+    ]
+  },
+  "user": {
+    "dataSource": "testresults",
+    "public": true
+  },
+  "accessToken": {
+    "dataSource": "testresults",
+    "public": false
+  },
+  "userCredential": {
+    "dataSource": "testresults",
+    "public": false
+  },
+  "userIdentity": {
+    "dataSource": "testresults",
+    "public": false
+  },
+  "ACL": {
+    "dataSource": "testresults",
+    "public": false
+  },
+  "RoleMapping": {
+    "dataSource": "testresults",
+    "public": false,
+    "options": {
+      "strictObjectIDCoercion": true
+    }
+  },
+  "Role": {
+    "dataSource": "testresults",
+    "public": false
+  },
+  "TestResult": {
+    "dataSource": "testresults",
+    "public": true
+  },
+  "TestRun": {
+    "dataSource": "testresults",
+    "public": true
+  },
+  "BrowserType": {
+    "dataSource": "testresults",
+    "public": true
+  },
+  "Environment": {
+    "dataSource": "testresults",
+    "public": true
+  },
+  "ProjectType": {
+    "dataSource": "testresults",
+    "public": true
+  },
+  "RunType": {
+    "dataSource": "testresults",
+    "public": true
+  }
+}

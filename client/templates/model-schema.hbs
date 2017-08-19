@@ -1,0 +1,18 @@
+import { createModelSchema, list, identifier, primitive, object } from 'serializr'
+export default class ModelSchemas {
+
+
+{{#modelsArray}}
+    static create{{name}}Schema(model, props) {
+        // {{name}}
+    return createModelSchema( model, Object.assign( {
+            {{#propertyArray}}
+                {{name}}:{{#id}}identifier(){{/id}}{{^id}}primitive(){{/id}}{{^last}}, {{/last}}
+            {{/propertyArray}}
+        },props ))
+    }
+{{/modelsArray}}
+
+
+
+}
