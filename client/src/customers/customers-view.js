@@ -22,12 +22,13 @@ render(){
 	<div>
 				<div>
 					<BootstrapTable
-						data={appStore.customersStore.allCustomers}
+						data={appStore.customersStore.allCustomersData}
 						search={true}
 						searchPlaceholder="type to search for new orders">
 						<TableHeaderColumn dataField="id" expandable={false} hidden={true} isKey >Id</TableHeaderColumn>
-						<TableHeaderColumn dataField="costumerName" headerAlign="center" dataAlign="left" dataSort>Costumer Name</TableHeaderColumn>
-						<TableHeaderColumn dataField="lastOrderDate" headerAlign="center" searchable={false} dataAlign="left">Last Order Date </TableHeaderColumn>
+						<TableHeaderColumn dataField="firstName" headerAlign="center" dataAlign="left" dataSort>First Name</TableHeaderColumn>
+            <TableHeaderColumn dataField="lastName" headerAlign="center" dataAlign="left" dataSort>Last Name</TableHeaderColumn>
+						<TableHeaderColumn dataField="phoneNumber" headerAlign="center" searchable={false} dataAlign="left">Phone Number</TableHeaderColumn>
 						<TableHeaderColumn dataField="numberOfOrders" searchable={false} dataSort>Total Orders</TableHeaderColumn>
 					</BootstrapTable>
 				</div>
