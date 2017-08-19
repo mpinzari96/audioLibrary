@@ -19,7 +19,14 @@ export default class CustomersView extends Component{
 render(){
 
   return(
-	<div>
+	<div className="tab-pane active customer-view">
+                        <div className="col-sm-2">
+                        <Button bsStyle="primary" className="btn-block"
+                                onClick={() => {
+                                    this.props.appStore.viewStore.showAddCustomerDialog()
+                                }}>New Order
+                        </Button>
+                    </div>
 				<div>
 					<BootstrapTable
 						data={appStore.customersStore.allCustomersData}

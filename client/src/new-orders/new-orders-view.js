@@ -31,14 +31,18 @@ createCustomInsertButton = (onClick) => {
   );
 }
 	render() {
-		const options = {
 
-  insertBtn: this.createCustomInsertButton
-};
 		return (
-			<div>
+			<div className="tab-pane active customer-view">
+                                <div className="col-sm-2">
+                        <Button bsStyle="primary" className="btn-block"
+                                onClick={() => {
+                                    this.props.appStore.viewStore.showAddCustomerDialog()
+                                }}>New Order
+                        </Button>
+                    </div>
 				<div>
-					<BootstrapTable options={options} insertRow
+					<BootstrapTable
 						data={appStore.newOrdersStore.newOrders}
 						search={true}
 						searchPlaceholder="type to search for new orders">
