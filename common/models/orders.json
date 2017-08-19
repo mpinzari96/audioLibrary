@@ -1,0 +1,43 @@
+{
+  "name": "orders",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "id": {
+      "type": "number"
+    },
+    "customerId": {
+      "type": "number",
+      "required": true
+    },
+    "orderDate": {
+      "type": "date",
+      "required": true
+    },
+    "expectedCompletedDate": {
+      "type": "date"
+    },
+    "completedDate": {
+      "type": "date"
+    },
+    "orderStatus": {
+      "type": "string",
+      "required": true
+    },
+    "orderSummary": {
+      "type": "string",
+      "required": true
+    },
+    "customerName": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": {}
+}

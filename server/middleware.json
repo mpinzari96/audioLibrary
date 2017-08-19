@@ -4,7 +4,7 @@
   },
   "initial": {
     "compression": {
-      "enabled":false
+      "enabled": false
     },
     "cors": {
       "params": {
@@ -42,17 +42,14 @@
       ]
     }
   },
-    "files": {
-        "loopback#static": [
-            {
-                "name": "static",
-                "paths": [
-                    "/static"
-                ],
-                "params": "$!../static"
-            }
-        ]
-    },
+  "files": {
+    "loopback#static": {
+      "paths": [
+        "/static"
+      ],
+      "params": "$!../static"
+    }
+  },
   "final": {
     "loopback#urlNotFound": {}
   },

@@ -9,7 +9,7 @@
     "url": "",
     "database": "audioLibrary",
     "password": "library123",
-    "name": "library",
+    "name": "audioLibrary",
     "user": "admin",
     "connector": "mysql"
   }

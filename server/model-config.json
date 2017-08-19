@@ -44,5 +44,13 @@
   "Role": {
     "dataSource": "audioLibrary",
     "public": false
+  },
+  "customers": {
+    "dataSource": "audioLibrary",
+    "public": true
+  },
+  "orders": {
+    "dataSource": "audioLibrary",
+    "public": true
   }
 }
