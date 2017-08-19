@@ -14,10 +14,9 @@ export default class SkyTCAdminRouter {
 		this.router = new Router({
 			"/files": this.appStore.viewStore.openFilesPage,
 			"/filedetail/:fileId": (fileId) => this.appStore.viewStore.openFileDetailPageById(fileId),
-			"/new-orders": this.appStore.viewStore.openTestDetailsPage,
-			"/reports": this.appStore.viewStore.openReportsPage,
+			"/new-orders": this.appStore.viewStore.openNewOrdersPage,
 
-			"/test-details": this.appStore.viewStore.openTestDetailsPage,
+			"/customers": this.appStore.viewStore.openCustomersPage,
 			"/coordinators": this.appStore.viewStore.openCoordinatorsPage,
 			"/callback": () => {
 				let parsedQueryString = queryString.parse(window.location.hash.split('?')[1])
@@ -38,7 +37,7 @@ export default class SkyTCAdminRouter {
 			() => this.appStore.viewStore.currentUrl,
 			(path) => {
 				if (path === '/') {
-					this.appStore.viewStore.openTestDetailsPage()
+					this.appStore.viewStore.openNewOrdersPage()
 				}
 			}, { fireImmediately: true }
 		)

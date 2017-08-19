@@ -1,17 +1,17 @@
 import ReportStore from './../reports/report-store'
 import ViewStore from './view-store'
 import NewOrdersStore from './../new-orders/new-orders-store'
-import TestDetailsStore from './../test-details/test-details-store'
+import CustomersStore from './../customers/customers-store'
 
 export default class AppStore {
 	reportStore
 	viewStore
-	testDetailsStore
+	customersStore
 	newOrdersStore
 
 	constructor() {
 		this.reportStore = new ReportStore(this)
-		this.testDetailsStore = new TestDetailsStore(this)
+		this.customersStore = new CustomersStore(this)
 		this.viewStore = new ViewStore(this)
 		this.newOrdersStore = new NewOrdersStore(this)
 	}

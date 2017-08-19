@@ -1,0 +1,39 @@
+import React, { Component } from 'react'
+import { inject, observer } from 'mobx-react'
+import { Dropdown } from 'react-bootstrap-dropdown';
+import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
+import {
+	Button, DropdownButton, MenuItem, Modal, FormGroup,
+	OverlayTrigger, Tooltip,
+} from 'react-bootstrap';
+
+
+@inject('appStore') @observer
+export default class CustomersView extends Component{
+
+	constructor(props) {
+		super(props)
+
+	}
+
+render(){
+
+  return(
+	<div>
+				<div>
+					<BootstrapTable
+						data={appStore.customersStore.allCustomers}
+						search={true}
+						searchPlaceholder="type to search for new orders">
+						<TableHeaderColumn dataField="id" expandable={false} hidden={true} isKey >Id</TableHeaderColumn>
+						<TableHeaderColumn dataField="costumerName" headerAlign="center" dataAlign="left" dataSort>Costumer Name</TableHeaderColumn>
+						<TableHeaderColumn dataField="lastOrderDate" headerAlign="center" searchable={false} dataAlign="left">Last Order Date </TableHeaderColumn>
+						<TableHeaderColumn dataField="numberOfOrders" searchable={false} dataSort>Total Orders</TableHeaderColumn>
+					</BootstrapTable>
+				</div>
+			</div>
+  )
+}
+
+
+}

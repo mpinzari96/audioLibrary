@@ -32,7 +32,7 @@ createCustomInsertButton = (onClick) => {
 }
 	render() {
 		const options = {
-		
+
   insertBtn: this.createCustomInsertButton
 };
 		return (
@@ -46,6 +46,7 @@ createCustomInsertButton = (onClick) => {
 						<TableHeaderColumn dataField="costumerName" headerAlign="center" dataAlign="left" dataSort>Costumer Name</TableHeaderColumn>
 						<TableHeaderColumn dataField="orderName" headerAlign="center" searchable={false} dataAlign="left">Order Name </TableHeaderColumn>
 						<TableHeaderColumn dataField="orderDate" searchable={false} dataSort>Order Date</TableHeaderColumn>
+            <TableHeaderColumn dataField="orderStatus" searchable={false} dataSort>Status</TableHeaderColumn>
 					</BootstrapTable>
 				</div>
 			</div>

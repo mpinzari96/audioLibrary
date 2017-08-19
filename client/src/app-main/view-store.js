@@ -27,8 +27,8 @@ export default class ViewStore {
         return "#/reports"
               case Cons.pages.newOrders:
         return "#/new-orders"
-      case Cons.pages.testDetails:
-        return "#/test-details"
+      case Cons.pages.customers:
+        return "#/customers"
       default:
         return "#/404"
     }
@@ -41,14 +41,13 @@ export default class ViewStore {
   @action.bound hideAddFileDialog() {
     this.addFileDialogOpen = false;
   }
-  @action.bound openReportsPage() {
-    this.page = Cons.pages.reports
-    this.selectReportsTab()
-    this.selectedFileId = null
+  @action.bound openNewOrdersPage() {
+    this.page = Cons.pages.newOrders
+    this.selectNewOrdersTab()
   }
-  @action.bound openTestDetailsPage() {
-    this.page = Cons.pages.testDetails
-    this.selectTestDetailsTab()
+  @action.bound openCustomersPage() {
+    this.page = Cons.pages.customers
+    this.selectCustomersTab()
   }
 
   @action.bound selectTab(tabName) {
@@ -61,20 +60,14 @@ export default class ViewStore {
     this.page = Cons.pages.files
   }
 
-  @action.bound selectReportsTab() {
-    this.selectedTab = Cons.pages.reports
-    this.page = Cons.pages.reports
-  }
-  @action.bound selectTestDetailsTab() {
-    //to do when clicked
-    this.selectedTab = Cons.pages.testDetails
-    this.page = Cons.pages.testDetails
-
-  }
   @action.bound selectNewOrdersTab() {
-    //to do when clicked
     this.selectedTab = Cons.pages.newOrders
     this.page = Cons.pages.newOrders
+  }
+  @action.bound selectCustomersTab() {
+    //to do when clicked
+    this.selectedTab = Cons.pages.customers
+    this.page = Cons.pages.customers
 
   }
 
@@ -84,7 +77,7 @@ export default class ViewStore {
     this.page = Cons.pages.files
   }
 
-  
+
 
   @action.bound showErrorNotification(message) {
     alert("There was an error")

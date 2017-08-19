@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import { inject, observer } from "mobx-react"
 import 'react-bootstrap-table/dist/react-bootstrap-table.min.css'
-import TestDetails from "./../test-details/test-details-view.js"
+import CustomersView from "./../customers/customers-view.js"
 import ReportsView from "./../reports/report-view.js"
 import NewOrdersView from "./../new-orders/new-orders-view.js"
 
@@ -28,11 +28,11 @@ export default class App extends Component {
 	}
 
 	renderPage( viewStore ) {
-		
+
 		//all the views go here
 		switch( viewStore.page ) {
-			case Cons.pages.testDetails :
-				return <TestDetails />
+			case Cons.pages.customers :
+				return <CustomersView />
 			case Cons.pages.reports :
 				return <ReportsView />
 		     case Cons.pages.newOrders :
@@ -43,13 +43,13 @@ export default class App extends Component {
 
 	render() {
 		return <div className="App" style={{ width: '100%', height: '100%' }}>
-			
+
 			<Header/>
 
 			<div className="container-fluid container-fixed-lg bg-white">
-				
+
 				<div className="container">
-					
+
 					<MainTabs />
 					{appStore.isLoading
 						? <h1>Loading...</h1>
@@ -60,6 +60,6 @@ export default class App extends Component {
 			<Footer/>
 			{/*<DevTool/>*/}
 		</div>
-		
+
 	}
 }

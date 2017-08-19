@@ -1,6 +1,6 @@
 export default class Cons {
 	static pages = {
-		"testDetails": "testDetails",
+		"customers": "customers",
 		"reports": "reports",
 		"newOrders": "newOrders"
 	}
