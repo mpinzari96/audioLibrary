@@ -47,8 +47,8 @@ createCustomInsertButton = (onClick) => {
 						search={true}
 						searchPlaceholder="type to search for new orders">
 						<TableHeaderColumn dataField="id" expandable={false} hidden={true} isKey >Id</TableHeaderColumn>
-						<TableHeaderColumn dataField="costumerName" headerAlign="center" dataAlign="left" dataSort>Costumer Name</TableHeaderColumn>
-						<TableHeaderColumn dataField="orderName" headerAlign="center" searchable={false} dataAlign="left">Order Name </TableHeaderColumn>
+						<TableHeaderColumn dataField="customerName" headerAlign="center" dataAlign="left" dataSort>Costumer Name</TableHeaderColumn>
+						<TableHeaderColumn dataField="orderSummary" headerAlign="center" searchable={false} dataAlign="left">Order Name </TableHeaderColumn>
 						<TableHeaderColumn dataField="orderDate" searchable={false} dataSort>Order Date</TableHeaderColumn>
             <TableHeaderColumn dataField="orderStatus" searchable={false} dataSort>Status</TableHeaderColumn>
 					</BootstrapTable>
