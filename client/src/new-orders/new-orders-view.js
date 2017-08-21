@@ -3,9 +3,10 @@ import { inject, observer } from 'mobx-react'
 import { Dropdown } from 'react-bootstrap-dropdown';
 import { BootstrapTable, TableHeaderColumn,InsertButton  } from 'react-bootstrap-table';
 import {
-	Button, DropdownButton, MenuItem, Modal, FormGroup,
+	Button, DropdownButton, MenuItem,Modal, FormGroup,
 	OverlayTrigger, Tooltip
 } from 'react-bootstrap';
+// var Modal = require('react-bootstrap-modal')
 
 @inject('appStore') @observer
 export default class NewOrdersView extends Component {
@@ -49,9 +50,13 @@ createCustomInsertButton = (onClick) => {
                         <Modal.Title id="contained-modal-title-lg">Create New Order</Modal.Title>
                     </Modal.Header>
                     <Modal.Body>
-{/*add stuff here*/}
+                        <div>
+                          This is where the form will go
+                          </div>
                     </Modal.Body>
                     <Modal.Footer>
+ <button className='btn btn-default' onClick={appStore.viewStore.hideAddCustomerDialog}>Cancel</button>
+            <button className='btn btn-primary'> Save </button>
                     </Modal.Footer>
                 </Modal>
 				<div>
