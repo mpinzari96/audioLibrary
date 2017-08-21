@@ -3,7 +3,7 @@ import { inject, observer } from 'mobx-react'
 import { Dropdown } from 'react-bootstrap-dropdown';
 import { BootstrapTable, TableHeaderColumn, InsertButton } from 'react-bootstrap-table';
 import {
-  Button, DropdownButton, MenuItem, Modal, FormGroup,
+  Button, Glyphicon, DropdownButton, MenuItem, Modal, FormGroup,
   OverlayTrigger, Tooltip, FormControl, ControlLabel
 } from 'react-bootstrap';
 var DatePicker = require("react-bootstrap-date-picker");
@@ -41,7 +41,8 @@ export default class NewOrdersView extends Component {
           <Button bsStyle="primary" className="btn-block"
             onClick={() => {
               this.props.appStore.viewStore.showAddCustomerDialog()
-            }}>New Order
+            }}>            <Glyphicon glyph="plus" /> New Order
+
                         </Button>
         </div>
         <Modal
@@ -57,7 +58,8 @@ export default class NewOrdersView extends Component {
                 <ControlLabel>Customer Name</ControlLabel>
                 <FormControl
                   type="text" placeholder="Customer Name" />
-                <Button className='btn btn-primary'>Add New Customer</Button>
+                <Button className='btn btn-primary'>
+                  <Glyphicon glyph="plus" /> New Customer</Button>
               </FormGroup>
               <FormGroup>
                 <ControlLabel>Ordered Date</ControlLabel>
