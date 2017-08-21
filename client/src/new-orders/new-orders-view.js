@@ -41,6 +41,19 @@ createCustomInsertButton = (onClick) => {
                                 }}>New Order
                         </Button>
                     </div>
+                       <Modal
+                    show={ appStore.viewStore.addCustomerDialogOpen }
+                    onHide={ appStore.viewStore.hideAddCustomerDialog }>
+                 {/*//   onEntered={ this.onModalEntered.bind(this) }>*/}
+                    <Modal.Header closeButton >
+                        <Modal.Title id="contained-modal-title-lg">Create New Order</Modal.Title>
+                    </Modal.Header>
+                    <Modal.Body>
+{/*add stuff here*/}
+                    </Modal.Body>
+                    <Modal.Footer>
+                    </Modal.Footer>
+                </Modal>
 				<div>
 					<BootstrapTable
 						data={appStore.newOrdersStore.newOrders}
