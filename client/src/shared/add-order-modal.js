@@ -18,6 +18,8 @@ import PropTypes from 'prop-types';
     appStore.viewStore.hideNewOrderDialog()
     appStore.viewStore.showAddCustomerDialog()
   }
+  input
+
   render() {
       return (
           <Modal
@@ -32,7 +34,8 @@ import PropTypes from 'prop-types';
                 <FormGroup >
                   <ControlLabel>Customer Name</ControlLabel>
                   <FormControl
-                    type="text" placeholder="Customer Name" />
+                    type="text" placeholder="Customer Name"
+                      inputRef={(ref) => {this.input = ref}}/>
                   <Button className='btn btn-primary' onClick={this.OpenCustomerDialog} >Add New Customer</Button>
                 </FormGroup>
                 <FormGroup>
