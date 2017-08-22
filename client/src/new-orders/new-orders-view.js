@@ -17,21 +17,9 @@ export default class NewOrdersView extends Component {
     super(props)
 
   }
-  handleInsertButtonClick = (onClick) => {
-    // Custom your onClick event here,
-    // it's not necessary to implement this function if you have no any process before onClick
-    console.log('This is my custom function for InserButton click event');
-    onClick();
-  }
-  createCustomInsertButton = (onClick) => {
-    return (
-      <InsertButton
-        btnText='New Order'
-        btnContextual='btn-primary'
-        className='my-custom-class'
-        btnGlyphicon='glyphicon-edit'
-        onClick={() => this.handleInsertButtonClick(onClick)} />
-    );
+  OpenCustomerDialog() {
+    appStore.viewStore.hideNewOrderDialog()
+    appStore.viewStore.showAddCustomerDialog()
   }
   render() {
 
@@ -40,14 +28,14 @@ export default class NewOrdersView extends Component {
         <div className="col-sm-2">
           <Button bsStyle="primary" className="btn-block"
             onClick={() => {
-              this.props.appStore.viewStore.showAddCustomerDialog()
-            }}>            <Glyphicon glyph="plus" /> New Order
-
-                        </Button>
+              this.props.appStore.viewStore.showNewOrderDialog()
+            }}>
+            <Glyphicon glyph="plus" /> New Order
+       </Button>
         </div>
         <Modal
-          show={appStore.viewStore.addCustomerDialogOpen}
-          onHide={appStore.viewStore.hideAddCustomerDialog}>
+          show={appStore.viewStore.addNewOrderDialogOpen}
+          onHide={appStore.viewStore.hideNewOrderDialog}>
           {/*//   onEntered={ this.onModalEntered.bind(this) }>*/}
           <Modal.Header closeButton >
             <Modal.Title id="contained-modal-title-lg">Create New Order</Modal.Title>
@@ -58,7 +46,7 @@ export default class NewOrdersView extends Component {
                 <ControlLabel>Customer Name</ControlLabel>
                 <FormControl
                   type="text" placeholder="Customer Name" />
-                <Button className='btn btn-primary'>
+                <Button className='btn btn-primary' onClick={this.OpenCustomerDialog}>
                   <Glyphicon glyph="plus" /> New Customer</Button>
               </FormGroup>
               <FormGroup>
@@ -73,6 +61,37 @@ export default class NewOrdersView extends Component {
               <FormGroup
                 bsSize="large">
                 <FormControl type="text" placeholder="Order Summary" />
+              </FormGroup>
+            </form>
+          </Modal.Body>
+          <Modal.Footer>
+            <button className='btn btn-default' onClick={appStore.viewStore.hideNewOrderDialog}>Cancel</button>
+            <button className='btn btn-primary'> Save </button>
+          </Modal.Footer>
+        </Modal>
+        <Modal
+          show={appStore.viewStore.addCustomerDialogOpen}
+          onHide={appStore.viewStore.hideAddCustomerDialog}>
+          {/*//   onEntered={ this.onModalEntered.bind(this) }>*/}
+          <Modal.Header closeButton >
+            <Modal.Title id="contained-modal-title-lg">Add New Customer</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <form>
+              <FormGroup >
+                <ControlLabel>First Name</ControlLabel>
+                <FormControl
+                  type="text" placeholder="first Name" />
+              </FormGroup>
+              <FormGroup >
+                <ControlLabel>Last Name</ControlLabel>
+                <FormControl
+                  type="text" placeholder="last Name" />
+              </FormGroup>
+              <FormGroup >
+                <ControlLabel>Email</ControlLabel>
+                <FormControl
+                  type="email" placeholder="email" />
               </FormGroup>
             </form>
           </Modal.Body>

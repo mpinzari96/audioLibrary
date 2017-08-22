@@ -9,6 +9,7 @@ export default class ViewStore {
   @observable selectedTab = ""
   @observable selectedFileId = null
   @observable addCustomerDialogOpen = false
+   @observable addNewOrderDialogOpen = false
   @observable fileTableViewOptions = new FilterOptions()// { order: " " }appStore
 
   constructor(appstore) {
@@ -40,6 +41,13 @@ export default class ViewStore {
 
   @action.bound hideAddCustomerDialog() {
     this.addCustomerDialogOpen = false;
+  }
+    @action.bound showNewOrderDialog() {
+    this.addNewOrderDialogOpen = true;
+  }
+
+  @action.bound hideNewOrderDialog() {
+    this.addNewOrderDialogOpen = false;
   }
   @action.bound openNewOrdersPage() {
     this.page = Cons.pages.newOrders

@@ -7,15 +7,17 @@ import {
   OverlayTrigger, Tooltip
 } from 'react-bootstrap';
 
-@inject('appStore') @observer
-export default class NewOrderView{
+
+ export class NewOrderView{
+  constructor(props) {
+  }
 
   render() {
       return (
         <div>
           <Modal
-            show={appStore.viewStore.addCustomerDialogOpen}
-            onHide={appStore.viewStore.hideAddCustomerDialog}>
+            show={false}
+            onHide={false}>
             {/*//   onEntered={ this.onModalEntered.bind(this) }>*/}
             <Modal.Header closeButton >
               <Modal.Title id="contained-modal-title-lg">Create New Order</Modal.Title>
@@ -26,7 +28,7 @@ export default class NewOrderView{
                   <ControlLabel>Customer Name</ControlLabel>
                   <FormControl
                     type="text" placeholder="Customer Name" />
-                  <Button className='btn btn-primary'>Add New Customer</Button>
+                  <Button className='btn btn-primary' onClick={appStore.viewStore.hideAddCustomerDialog}>Add New Customer</Button>
                 </FormGroup>
                 <FormGroup>
                   <ControlLabel>Ordered Date</ControlLabel>
@@ -52,6 +54,7 @@ export default class NewOrderView{
 
     }
   }
+
 
 
 

@@ -26,7 +26,7 @@ export default class CustomersView extends Component {
           <Button bsStyle="primary" className="btn-block"
             onClick={() => {
               this.props.appStore.viewStore.showAddCustomerDialog()
-            }}>New Order
+            }}>New Customer
              </Button>
         </div>
         <div>
