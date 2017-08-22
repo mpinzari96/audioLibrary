@@ -3,14 +3,13 @@ import { inject, observer } from 'mobx-react'
 import { Dropdown } from 'react-bootstrap-dropdown';
 import { BootstrapTable, TableHeaderColumn } from 'react-bootstrap-table';
 import {
-  Button, DropdownButton, MenuItem, Modal, FormGroup,
+  Button, Glyphicon,DropdownButton, MenuItem, Modal, FormGroup,
   OverlayTrigger, Tooltip,
 } from 'react-bootstrap';
-import { NewOrderView } from './../shared/add-order-view'
+import AddCustomerModal from './../shared/add-customer-modal';
 
 @inject('appStore') @observer
 export default class CustomersView extends Component {
-
   constructor(props) {
     super(props)
 
@@ -26,10 +25,12 @@ export default class CustomersView extends Component {
           <Button bsStyle="primary" className="btn-block"
             onClick={() => {
               this.props.appStore.viewStore.showAddCustomerDialog()
-            }}>New Customer
-             </Button>
+            }}>
+            <Glyphicon glyph="plus" /> New Customer</Button>
         </div>
         <div>
+          <AddCustomerModal show={appStore.viewStore.addCustomerModalOpen}
+            onHide={appStore.viewStore.hideAddCustomerDialog} />
           <BootstrapTable
             data={appStore.customersStore.allCustomersData}
             search={true}

@@ -7,8 +7,9 @@ import {
   OverlayTrigger, Tooltip, FormControl, ControlLabel
 } from 'react-bootstrap';
 var DatePicker = require("react-bootstrap-date-picker");
+import AddOrderModal from './../shared/add-order-modal'
+import AddCustomerModal from './../shared/add-customer-modal';
 
-// var Modal = require('react-bootstrap-modal')
 
 @inject('appStore') @observer
 export default class NewOrdersView extends Component {
@@ -16,10 +17,6 @@ export default class NewOrdersView extends Component {
   constructor(props) {
     super(props)
 
-  }
-  OpenCustomerDialog() {
-    appStore.viewStore.hideNewOrderDialog()
-    appStore.viewStore.showAddCustomerDialog()
   }
   render() {
 
@@ -33,73 +30,11 @@ export default class NewOrdersView extends Component {
             <Glyphicon glyph="plus" /> New Order
        </Button>
         </div>
-        <Modal
+        <AddOrderModal
           show={appStore.viewStore.addNewOrderDialogOpen}
-          onHide={appStore.viewStore.hideNewOrderDialog}>
-          {/*//   onEntered={ this.onModalEntered.bind(this) }>*/}
-          <Modal.Header closeButton >
-            <Modal.Title id="contained-modal-title-lg">Create New Order</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <form>
-              <FormGroup >
-                <ControlLabel>Customer Name</ControlLabel>
-                <FormControl
-                  type="text" placeholder="Customer Name" />
-                <Button className='btn btn-primary' onClick={this.OpenCustomerDialog}>
-                  <Glyphicon glyph="plus" /> New Customer</Button>
-              </FormGroup>
-              <FormGroup>
-                <ControlLabel>Ordered Date</ControlLabel>
-                <DatePicker id="ordered-datepicker" />
-              </FormGroup>
-              <FormGroup>
-                <ControlLabel>Expected Date</ControlLabel>
-                <DatePicker id="completed-datepicker" />
-              </FormGroup>
-              <ControlLabel>Order Summary</ControlLabel>
-              <FormGroup
-                bsSize="large">
-                <FormControl type="text" placeholder="Order Summary" />
-              </FormGroup>
-            </form>
-          </Modal.Body>
-          <Modal.Footer>
-            <button className='btn btn-default' onClick={appStore.viewStore.hideNewOrderDialog}>Cancel</button>
-            <button className='btn btn-primary'> Save </button>
-          </Modal.Footer>
-        </Modal>
-        <Modal
-          show={appStore.viewStore.addCustomerDialogOpen}
-          onHide={appStore.viewStore.hideAddCustomerDialog}>
-          {/*//   onEntered={ this.onModalEntered.bind(this) }>*/}
-          <Modal.Header closeButton >
-            <Modal.Title id="contained-modal-title-lg">Add New Customer</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <form>
-              <FormGroup >
-                <ControlLabel>First Name</ControlLabel>
-                <FormControl
-                  type="text" placeholder="first Name" />
-              </FormGroup>
-              <FormGroup >
-                <ControlLabel>Last Name</ControlLabel>
-                <FormControl
-                  type="text" placeholder="last Name" />
-              </FormGroup>
-              <FormGroup >
-                <ControlLabel>Email</ControlLabel>
-                <FormControl
-                  type="email" placeholder="email" />
-              </FormGroup>
-            </form>
-          </Modal.Body>
-          <Modal.Footer>
-            <button className='btn btn-default' onClick={appStore.viewStore.hideAddCustomerDialog}>Cancel</button>
-            <button className='btn btn-primary'> Save </button>
-          </Modal.Footer>
-        </Modal>
+          onHide={appStore.viewStore.hideNewOrderDialog} />
+        <AddCustomerModal show={appStore.viewStore.addCustomerModalOpen}
+          onHide={appStore.viewStore.hideAddCustomerDialog} />
         <div>
           <BootstrapTable
             data={appStore.newOrdersStore.newOrders}
