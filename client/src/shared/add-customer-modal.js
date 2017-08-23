@@ -85,7 +85,7 @@ export default class AddCustomerModal extends Component {
               <ControlLabel>{this.form.$('phoneNumber').label}</ControlLabel>
               <FormControl
                 type="number"
-                maxLength={10}
+                maxLength={15}
                 {...this.form.$(`phoneNumber`).bind() }
                 placeholder="Phone Number" />
                  <p>{form.$('phoneNumber').error}</p>
