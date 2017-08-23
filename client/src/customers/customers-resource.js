@@ -19,7 +19,6 @@ export default class CustomersResource {
     })
   }
   createNewCustomer(newCustomer,createdDate) {
-    debugger
     return new Promise((resolve, reject) => {
       request
         .post(`api/customers`)

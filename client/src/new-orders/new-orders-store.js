@@ -27,6 +27,4 @@ newOrderResource
                 console.log("Failed to load all Orders." + err)
             })
 }
-
-
 }
