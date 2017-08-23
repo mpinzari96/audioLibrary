@@ -41,12 +41,12 @@ export default class AddCustomerModal extends Component {
           })
           this.props.appStore.viewStore.hideAddCustomerDialog()
           this.form.clear()
-
+       appStore.customersStore.createNewCustomer(formattedFields);
 
           console.log(formattedFields)
         } else {
           const errorMessages = _.filter(form.errors(), (value, key) => {
-            return key !== 'agents' && !_.isUndefined(value)
+            return key !== 'email' && !_.isUndefined(value)
           })
           Notifications.ToastError(errorMessages)
         }
@@ -60,7 +60,6 @@ export default class AddCustomerModal extends Component {
       <Modal
         show={this.props.show}
         onHide={this.props.onHide}>
-        {/*//   onEntered={ this.onModalEntered.bind(this) }>*/}
         <Modal.Header closeButton >
           <Modal.Title id="contained-modal-title-lg">Add New Customer</Modal.Title>
         </Modal.Header>
@@ -72,6 +71,7 @@ export default class AddCustomerModal extends Component {
                 type="text" maxLength={20}
                 {...this.form.$(`firstName`).bind() }
                 placeholder="First Name" />
+                <p>{form.$('firstName').error}</p>
             </FormGroup>
             <FormGroup >
               <ControlLabel>{this.form.$('lastName').label}</ControlLabel>
@@ -79,6 +79,7 @@ export default class AddCustomerModal extends Component {
                 type="text" maxLength={20}
                 {...this.form.$(`lastName`).bind() }
                 placeholder="Last Name" />
+                  <p>{form.$('lastName').error}</p>
             </FormGroup>
             <FormGroup>
               <ControlLabel>{this.form.$('phoneNumber').label}</ControlLabel>
@@ -87,13 +88,13 @@ export default class AddCustomerModal extends Component {
                 maxLength={10}
                 {...this.form.$(`phoneNumber`).bind() }
                 placeholder="Phone Number" />
+                 <p>{form.$('phoneNumber').error}</p>
             </FormGroup>
             <FormGroup >
               <ControlLabel>{this.form.$('email').label}</ControlLabel>
               <FormControl
-                type="email" maxLength={30}
-                {...this.form.$(`email`).bind() }
-                placeholder="Email" required={true} />
+                {...this.form.$(`email`).bind() }/>
+                <p className="form-error">{form.$('email').error}</p>
             </FormGroup>
           </form>
         </Modal.Body>

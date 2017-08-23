@@ -1,6 +1,7 @@
 import { observable, computed, action, runInAction } from "mobx"
 import { serializable, identifier, update, deserialize, serialize, object, list } from "serializr"
 import CustomersResource from "./customers-resource"
+import moment from "moment"
 
 export default class CustomersStore{
 
@@ -26,6 +27,9 @@ export default class CustomersStore{
             })
 }
 
-
+@action.bound createNewCustomer(newCustomer){
+var date = moment().format();
+return this.customersResource.createNewCustomer(newCustomer,date);
+}
 
 }
