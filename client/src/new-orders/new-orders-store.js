@@ -17,7 +17,6 @@ newOrderResource
    return this.newOrders.slice()
 }
 
-
 @action.bound getAllOrders(){
         return this.newOrderResource.getAllOrders()
             .then(tr => {

@@ -56,7 +56,9 @@ export default class AddCustomerModal extends Component {
       })
   }
   render() {
+
     return (
+
       <Modal
         show={this.props.show}
         onHide={this.props.onHide}>
