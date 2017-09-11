@@ -19,7 +19,6 @@ export default class NewOrdersView extends Component {
 
   }
   render() {
-
     return (
       <div className="tab-pane active customer-view">
         <div className="col-sm-2">

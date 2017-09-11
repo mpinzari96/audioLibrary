@@ -16,7 +16,7 @@ export default class CustomersView extends Component {
     super(props)
     this.form = form
   }
-
+customerName=null
   onRowSelect(row, isSelected) {
     var rowStr = "";
     for (var prop in row) {
@@ -24,29 +24,30 @@ export default class CustomersView extends Component {
     }
 
   };
+  formatSelectedCustomer(row) {
 
-  addButtons(row) {
-
+  }
+  addButtons(cell, row) {
     return <div> <Button bsStyle="primary"
       onClick={() => {
-        this.props.appStore.viewStore.showNewOrderDialog()
+        this.props.appStore.viewStore.showNewOrderDialog(),
+        this.customerName=`${row.firstName} ${row.lastName}`,
+        appStore.viewStore.selectedCustomerId = cell
       }}>
       <Glyphicon glyph="plus small" />
     </Button>
-<span> </span>
-    <Button bsStyle="primary"
-      onClick={() => {
-        this.props.appStore.viewStore.showAddCustomerDialog()
-      }}>
-      <Glyphicon glyph="edit small" />
-    </Button>
+      <span> </span>
+      <Button bsStyle="primary"
+        onClick={() => {
+          this.props.appStore.viewStore.showAddCustomerDialog(),
+            appStore.viewStore.selectedCustomerId = row
+        }}>
+        <Glyphicon glyph="edit small" />
+      </Button>
     </div>
   }
 
-  getSelectedRowKeys(e) {
-    // I think this answers your questions
-    console.log(e)
-  }
+
   render() {
 
     const selectRow = {
@@ -72,9 +73,11 @@ export default class CustomersView extends Component {
             onHide={appStore.viewStore.hideAddCustomerDialog} />
 
           <AddOrderModal show={appStore.viewStore.addNewOrderDialogOpen}
-            onHide={appStore.viewStore.hideNewOrderDialog} />
+            onHide={appStore.viewStore.hideNewOrderDialog}
+            customerName={this.customerName}
+            customerId={appStore.viewStore.selectedCustomerId}
+             />
           <BootstrapTable
-            //  selectRow={selectRow}
             data={appStore.customersStore.allCustomersData}
             search={true}
             searchPlaceholder="type to search for new orders">

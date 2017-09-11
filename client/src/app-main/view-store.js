@@ -7,7 +7,7 @@ import FilterOptions from "../shared/filter-options"
 export default class ViewStore {
   @observable page = ""
   @observable selectedTab = ""
-  @observable selectedFileId = null
+  @observable selectedCustomerId = null
   @observable addCustomerModalOpen = false
    @observable addNewOrderDialogOpen = false
   @observable fileTableViewOptions = new FilterOptions()// { order: " " }appStore

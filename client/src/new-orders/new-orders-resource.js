@@ -16,6 +16,22 @@ getAllOrders(){
         })
 }
 
-
+ createOrder(customerId,customerName,orderSummary,orderDate) {
+    return new Promise((resolve, reject) => {
+      request
+        .post(`api/orders`)
+        .send({
+          "customerId": customerId,
+          "customerName": customerName,
+          "orderSummary": orderSummary,
+          "orderDate":orderDate,
+          "orderStatus":"InProgress"
+        })
+        .then(({ body }) => {
+          resolve(body)
+        })
+        .catch(reject)
+    })
+  }
 
 }
