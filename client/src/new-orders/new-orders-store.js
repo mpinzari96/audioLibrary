@@ -36,4 +36,13 @@ export default class NewOrdersStore {
         return this.newOrderResource.updateStatus(customerId, status);
 
     }
+    @action.bound streamOrders(data) {
+        const copyNewOrders = this.newOrders;
+        const result = copyNewOrders.find(item => item.id == data.data.id)
+        result.orderStatus = data.data.orderStatus;
+        this.newOrders.replace(copyNewOrders)
+    }
+    startStream() {
+        this.newOrderResource.streamOrders();
+    }
 }

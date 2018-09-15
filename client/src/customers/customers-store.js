@@ -3,20 +3,20 @@ import { serializable, identifier, update, deserialize, serialize, object, list 
 import CustomersResource from "./customers-resource"
 import moment from "moment"
 
-export default class CustomersStore{
+export default class CustomersStore {
 
-  customersResource
-  constructor(appStore) {
-    this.appStore=appStore
-    this.customersResource=new CustomersResource()
-  }
+    customersResource
+    constructor(appStore) {
+        this.appStore = appStore
+        this.customersResource = new CustomersResource()
+    }
     @observable allCustomers = []
 
-        @computed get allCustomersData() {
+    @computed get allCustomersData() {
         return this.allCustomers.slice()
     }
 
-@action.bound getAllCustomers(){
+    @action.bound getAllCustomers() {
         return this.customersResource.getAllCustomers()
 
             .then(tr => {
@@ -25,11 +25,18 @@ export default class CustomersStore{
             .catch(err => {
                 console.log("Failed to load all customers." + err)
             })
-}
+    }
 
-@action.bound createNewCustomer(newCustomer){
-var date = moment().format();
-return this.customersResource.createNewCustomer(newCustomer,date);
-}
-
+    @action.bound createNewCustomer(newCustomer) {
+        var date = moment().format();
+        return this.customersResource.createNewCustomer(newCustomer, date);
+    }
+    @action.bound streamOrders(data) {
+        const copyAllCustomers = this.allCustomers;
+        copyAllCustomers.push(data.data)
+        this.allCustomers.replace(copyAllCustomers)
+    }
+    startStream() {
+        this.customersResource.streamOrders();
+    }
 }

@@ -81,7 +81,7 @@ export default class NewOrdersView extends Component {
         //   onHide={appStore.viewStore.hideAddCustomerDialog} />
         <div>
           <BootstrapTable
-            data={appStore.newOrdersStore.newOrders}
+            data={appStore.newOrdersStore.newOrdersData}
             search={true}
             searchPlaceholder="type to search for new orders"
             

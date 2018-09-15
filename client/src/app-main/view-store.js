@@ -71,12 +71,14 @@ export default class ViewStore {
   @action.bound selectNewOrdersTab() {
     this.selectedTab = Cons.pages.newOrders
     this.page = Cons.pages.newOrders
+    this.appStore.newOrdersStore.startStream();
     this.appStore.newOrdersStore.getAllOrders();
   }
   @action.bound selectCustomersTab() {
     //to do when clicked
     this.selectedTab = Cons.pages.customers
     this.page = Cons.pages.customers
+    this.appStore.customersStore.startStream();
     this.appStore.newOrdersStore.getAllOrders();
     this.appStore.customersStore.getAllCustomers();
   }

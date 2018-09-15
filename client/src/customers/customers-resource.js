@@ -36,4 +36,12 @@ export default class CustomersResource {
         .catch(reject)
     })
   }
+  streamOrders() {
+    var urlToChangeStream = '/api/Customers/change-stream?_format=event-stream';
+    var src = new EventSource(urlToChangeStream);
+    src.addEventListener('data', function (msg) {
+        var data = JSON.parse(msg.data);
+        appStore.customersStore.streamOrders(data)
+    });
+}
 }
