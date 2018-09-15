@@ -6,7 +6,7 @@
     "strategy": "OAuth2Strategy",
     "clientID": "52171130023-ti8268ksc34npplgv32ln4rsseugre6v.apps.googleusercontent.com",
     "clientSecret": "UgRo_HaXfRHJgLFgTgJ3PcKC",
-    "callbackURL": "http://localhost:3000/auth/google/callback",
+    "callbackURL": "http://54.87.168.18:3000/auth/google/callback",
     "authPath": "/auth/google",
     "callbackPath": "/auth/google/callback",
     "successRedirect": "/",
