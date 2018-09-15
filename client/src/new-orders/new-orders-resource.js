@@ -33,5 +33,22 @@ getAllOrders(){
         .catch(reject)
     })
   }
+  updateStatus(orderData,status){
+    return new Promise((resolve, reject) => {
+      request
+        .put(`api/orders/${orderData.id}`)
+        .send({
+          "customerId": orderData.customerId,
+          "customerName": orderData.customerName,
+          "orderSummary": orderData.orderSummary,
+          "orderDate":orderData.orderDate,
+          "orderStatus":status
+        })
+        .then(({ body }) => {
+          resolve(body)
+        })
+        .catch(reject)
+    })
+  }
 
 }

@@ -37,7 +37,7 @@ export default class SkyTCAdminRouter {
 			() => this.appStore.viewStore.currentUrl,
 			(path) => {
 				if (path === '/') {
-					this.appStore.viewStore.openNewOrdersPage()
+					this.appStore.viewStore.openCustomersPage()
 				}
 			}, { fireImmediately: true }
 		)

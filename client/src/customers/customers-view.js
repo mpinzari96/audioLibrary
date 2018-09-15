@@ -9,6 +9,7 @@ import {
 import AddCustomerModal from './../shared/add-customer-modal';
 import form from "./../shared/add-customer-component"
 import AddOrderModal from './../shared/add-order-modal';
+import NumberFormat from 'react-number-format';
 
 @inject('appStore') @observer
 export default class CustomersView extends Component {
@@ -28,7 +29,7 @@ customerName=null
 
   }
   addButtons(cell, row) {
-    return <div> <Button bsStyle="primary"
+    return <div> <Button bsStyle="primary" title="Click to place an order"
       onClick={() => {
         this.props.appStore.viewStore.showNewOrderDialog(),
         this.customerName=`${row.firstName} ${row.lastName}`,
@@ -37,7 +38,7 @@ customerName=null
       <Glyphicon glyph="plus small" />
     </Button>
       <span> </span>
-      <Button bsStyle="primary"
+      <Button bsStyle="primary" title="Click to edit custumer information"
         onClick={() => {
           this.props.appStore.viewStore.showAddCustomerDialog(),
             appStore.viewStore.selectedCustomerId = row
@@ -46,17 +47,13 @@ customerName=null
       </Button>
     </div>
   }
+phoneFormater(cell,row){
+return <NumberFormat value={cell} displayType={'text'} format="(###) ###-####" />
 
+}
 
   render() {
 
-    const selectRow = {
-      mode: "checkbox",
-      clickToSelect: true,
-      bgColor: '#fefefe',
-      onSelect: this.onRowSelect
-
-    };
     return (
 
       <div className="tab-pane active customer-view">
@@ -84,7 +81,7 @@ customerName=null
             <TableHeaderColumn dataField="id" expandable={false} hidden={true} isKey >Id</TableHeaderColumn>
             <TableHeaderColumn dataField="firstName" headerAlign="center" dataAlign="left" dataSort>First Name</TableHeaderColumn>
             <TableHeaderColumn dataField="lastName" headerAlign="center" dataAlign="left" dataSort>Last Name</TableHeaderColumn>
-            <TableHeaderColumn dataField="phoneNumber" headerAlign="center" searchable={true} dataAlign="left">Phone Number</TableHeaderColumn>
+            <TableHeaderColumn dataField="phoneNumber" dataFormat={this.phoneFormater.bind(this)} headerAlign="center" searchable={true} dataAlign="left">Phone Number</TableHeaderColumn>
             <TableHeaderColumn dataField="numberOfOrders" searchable={false} dataSort>Total Orders</TableHeaderColumn>
             <TableHeaderColumn dataField="id" dataFormat={this.addButtons.bind(this)}> </TableHeaderColumn>
           </BootstrapTable>

@@ -16,25 +16,25 @@ const fields = {
     name: 'firstName',
     label: 'First Name',
     placeholder: 'Insert First Name',
-    // rules: 'required|text|string|between:0,25',
+     rules: 'required|text|string|between:0,25',
   },
   lastName: {
     name: 'lastName',
     label: 'Last Name',
     placeholder: 'Insert Last Name',
-    //rules: 'required|text|string|between:0,25',
+    rules: 'required|text|string|between:0,25',
   },
   phoneNumber: {
     name: 'phoneNumber',
     label: 'Phone Number',
     placeholder: 'Insert Phone Number',
-    //rules: 'required|phoneNumber|number|between:5,25',
+    rules: 'required|number',
   },
   email: {
     name: 'email',
     label: 'Email',
     placeholder: 'Insert Email',
-    rules: 'required|email|string|between:5,40',
+    rules: 'email|string|between:5,40',
   }
 };
 

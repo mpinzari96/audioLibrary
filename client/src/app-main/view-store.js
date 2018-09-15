@@ -77,6 +77,7 @@ export default class ViewStore {
     //to do when clicked
     this.selectedTab = Cons.pages.customers
     this.page = Cons.pages.customers
+    this.appStore.newOrdersStore.getAllOrders();
     this.appStore.customersStore.getAllCustomers();
   }
 

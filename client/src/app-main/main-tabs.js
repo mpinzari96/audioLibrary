@@ -26,7 +26,7 @@ export default class MainTabs extends Component {
 						e.preventDefault()
 						appStore.viewStore.selectNewOrdersTab()
 						return false
-					}}>New Orders</a>
+					}}>Orders</a>
 				</li>
 
 
