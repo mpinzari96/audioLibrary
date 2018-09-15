@@ -25,7 +25,7 @@ getAllOrders(){
           "customerName": customerName,
           "orderSummary": orderSummary,
           "orderDate":orderDate,
-          "orderStatus":"InProgress"
+          "orderStatus":"Recieved"
         })
         .then(({ body }) => {
           resolve(body)

@@ -84,7 +84,7 @@ customerName=null
             <TableHeaderColumn dataField="id" expandable={false} hidden={true} isKey >Id</TableHeaderColumn>
             <TableHeaderColumn dataField="firstName" headerAlign="center" dataAlign="left" dataSort>First Name</TableHeaderColumn>
             <TableHeaderColumn dataField="lastName" headerAlign="center" dataAlign="left" dataSort>Last Name</TableHeaderColumn>
-            <TableHeaderColumn dataField="phoneNumber" headerAlign="center" searchable={false} dataAlign="left">Phone Number</TableHeaderColumn>
+            <TableHeaderColumn dataField="phoneNumber" headerAlign="center" searchable={true} dataAlign="left">Phone Number</TableHeaderColumn>
             <TableHeaderColumn dataField="numberOfOrders" searchable={false} dataSort>Total Orders</TableHeaderColumn>
             <TableHeaderColumn dataField="id" dataFormat={this.addButtons.bind(this)}> </TableHeaderColumn>
           </BootstrapTable>

@@ -4,13 +4,13 @@
     "connector": "memory"
   },
   "audioLibrary": {
-    "host": "library.cysrnutlz2ka.us-east-2.rds.amazonaws.com",
+    "host": "127.0.0.1",
     "port": 3306,
     "url": "",
-    "database": "audioLibrary",
-    "password": "library123",
+    "database": "AudioLibrary",
+    "password": "password",
     "name": "audioLibrary",
-    "user": "admin",
+    "user": "root",
     "connector": "mysql"
   }
 }

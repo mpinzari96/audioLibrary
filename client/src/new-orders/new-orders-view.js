@@ -18,7 +18,32 @@ export default class NewOrdersView extends Component {
     super(props)
 
   }
+  selectNewStatus(e) {
+    debugger
+  }
+
+  columnClassNameFormat(fieldValue, row, rowIdx, colIdx) {
+    debugger
+    // fieldValue is column value
+    // row is whole row object
+    // rowIdx is index of row
+    // colIdx is index of column
+    //return fieldValue=="Recieved"? <div class="label label-warning">{fieldValue}</div> : <div class="label label-success">{fieldValue}</div>
+    return <span>
+      <select onChange={() => this.selectNewStatus}>
+        <option>{fieldValue}</option>
+        <option>Completed</option>
+
+      </select>
+    </span>
+  }
+  valueFormatter(cell, row) {
+    return (
+      <ValueFormatter data={row} />
+    );
+  }
   render() {
+
     return (
       <div className="tab-pane active customer-view">
         <div className="col-sm-2">
@@ -43,10 +68,32 @@ export default class NewOrdersView extends Component {
             <TableHeaderColumn dataField="customerName" headerAlign="center" dataAlign="left" dataSort>Costumer Name</TableHeaderColumn>
             <TableHeaderColumn dataField="orderSummary" headerAlign="center" searchable={false} dataAlign="left">Order Name </TableHeaderColumn>
             <TableHeaderColumn dataField="orderDate" searchable={false} dataSort>Order Date</TableHeaderColumn>
-            <TableHeaderColumn dataField="orderStatus" searchable={false} dataSort>Status</TableHeaderColumn>
+            <TableHeaderColumn dataField="orderStatus" editable={{ type: 'select' }} dataFormat={this.valueFormatter.bind(this)} searchable={false} dataSort>Status</TableHeaderColumn>
           </BootstrapTable>
         </div>
       </div>
     )
   }
 }
+class ValueFormatter extends React.Component {
+
+  handleClick(cell) {
+    debugger
+var value = cell.target.value
+    console.log('value clicked');
+  }
+
+  render() {
+    return (
+      <span>
+        <select onChange={this.handleClick.bind(this)}>
+          <option>{this.props.data.orderStatus}</option>
+          <option>Completed</option>
+
+        </select>
+      </span>
+    );
+  }
+};
+
+

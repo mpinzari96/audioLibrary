@@ -4,7 +4,7 @@
   ServerUtils = require("./../modules/server-utils")
 
 module.exports = (app, done) => {
-    // let ds = app.datasources['testresults'],
+    // let ds = app.datasources['audioLibrary'],
     //   models = ServerUtils.attachedModels(app),
     //   modelNames = models.map((model) => model.modelName)
     // ds.autoupdate(modelNames, (err, results) => {
