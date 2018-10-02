@@ -4,6 +4,7 @@ import 'react-bootstrap-table/dist/react-bootstrap-table.min.css'
 import CustomersView from "./../customers/customers-view.js"
 import ReportsView from "./../reports/report-view.js"
 import NewOrdersView from "./../new-orders/new-orders-view.js"
+import CompletedOrdersView from "./../completed-orders/completed-orders-view.js"
 
 import MainTabs from "./main-tabs.js"
 import Cons from "./../cons.js"
@@ -37,6 +38,8 @@ export default class App extends Component {
 				return <ReportsView />
 		     case Cons.pages.newOrders :
 				return <NewOrdersView />
+				case Cons.pages.completedOrders :
+				return <CompletedOrdersView />
 
 		}
 	}

@@ -15,9 +15,11 @@ export default class NewOrdersStore {
     @observable newOrders = []
 
     @computed get newOrdersData() {
-        return this.newOrders.slice()
+        return this.newOrders.filter(x => x.orderStatus != "Completed").slice()
     }
-
+    @computed get completedOrdersData() {
+        return this.newOrders.filter(x => x.orderStatus == "Completed").slice()
+    }
     @action.bound getAllOrders() {
         return this.newOrderResource.getAllOrders()
             .then(tr => {
@@ -37,10 +39,16 @@ export default class NewOrdersStore {
 
     }
     @action.bound streamOrders(data) {
-        const copyNewOrders = this.newOrders;
-        const result = copyNewOrders.find(item => item.id == data.data.id)
-        result.orderStatus = data.data.orderStatus;
-        this.newOrders.replace(copyNewOrders)
+        if (typeof data === "undefined") {
+
+        }
+        else {
+            const copyNewOrders = this.newOrders;
+            const result = copyNewOrders.find(item => item.id == data.data.id)
+            result.orderStatus = data.data.orderStatus;
+            this.newOrders.replace(copyNewOrders)
+        }
+
     }
     startStream() {
         this.newOrderResource.streamOrders();

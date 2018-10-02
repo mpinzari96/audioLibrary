@@ -15,7 +15,7 @@ export default class SkyTCAdminRouter {
 			"/files": this.appStore.viewStore.openFilesPage,
 			"/filedetail/:fileId": (fileId) => this.appStore.viewStore.openFileDetailPageById(fileId),
 			"/new-orders": this.appStore.viewStore.openNewOrdersPage,
-
+			"/completed-orders": this.appStore.viewStore.openCompletedOrdersPage,
 			"/customers": this.appStore.viewStore.openCustomersPage,
 			"/coordinators": this.appStore.viewStore.openCoordinatorsPage,
 			"/callback": () => {

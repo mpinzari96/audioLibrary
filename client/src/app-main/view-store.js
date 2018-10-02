@@ -45,7 +45,7 @@ export default class ViewStore {
     @action.bound showNewOrderDialog() {
     this.addNewOrderDialogOpen = true;
   }
-
+  
   @action.bound hideNewOrderDialog() {
     this.addNewOrderDialogOpen = false;
   }
@@ -57,7 +57,11 @@ export default class ViewStore {
     this.page = Cons.pages.customers
     this.selectCustomersTab()
   }
+@action.bound openCompletedOrdersPage(){
+  this.page = Cons.pages.completedOrders
+  this.selectCompletedOrdersTab()
 
+}
   @action.bound selectTab(tabName) {
     this.selectedTab = tabName
   }
@@ -67,7 +71,12 @@ export default class ViewStore {
     this.selectedTab = Cons.pages.files
     this.page = Cons.pages.files
   }
-
+  @action.bound selectCompletedOrdersTab() {
+    this.selectedTab = Cons.pages.completedOrders
+    this.page = Cons.pages.completedOrders
+    this.appStore.newOrdersStore.startStream();
+    this.appStore.newOrdersStore.getAllOrders();
+  }
   @action.bound selectNewOrdersTab() {
     this.selectedTab = Cons.pages.newOrders
     this.page = Cons.pages.newOrders

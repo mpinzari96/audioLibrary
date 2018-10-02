@@ -26,9 +26,15 @@ export default class MainTabs extends Component {
 						e.preventDefault()
 						appStore.viewStore.selectNewOrdersTab()
 						return false
-					}}>Orders</a>
+					}}>Recieved</a>
 				</li>
-
+				<li className={appStore.viewStore.selectedTab === Cons.pages.completedOrders ? "active" : ""}>
+					<a href="/completed-orders" onClick={(e) => {
+						e.preventDefault()
+						appStore.viewStore.selectCompletedOrdersTab()
+						return false
+					}}>Completed</a>
+				</li>
 
 			</ul>
 
