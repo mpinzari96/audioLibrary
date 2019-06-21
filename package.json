@@ -44,7 +44,7 @@
     "blanket": "^1.2.3",
     "chai-as-promised": "^6.0.0",
     "cross-env": "^4.0.0",
-    "eslint": "^3.17.1",
+    "eslint": "^4.18.2",
     "eslint-config-loopback": "^8.0.0",
     "eslint-plugin-react": "^6.10.3",
     "exec-sh": "^0.2.2",
