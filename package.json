@@ -49,7 +49,7 @@
     "eslint-plugin-react": "^6.10.3",
     "exec-sh": "^0.2.2",
     "faker": "https://registry.npmjs.org/faker/-/faker-4.1.0.tgz",
-    "grunt": "^1.0.3",
+    "grunt": "^1.5.3",
     "grunt-docker-compose": "^0.2.1",
     "grunt-env": "^0.4.4",
     "grunt-exec": "^2.0.0",
