@@ -62,7 +62,7 @@
     "load-grunt-config": "^0.19.2",
     "load-grunt-tasks": "^3.5.2",
     "mocha": "https://registry.npmjs.org/mocha/-/mocha-3.4.2.tgz",
-    "moment-timezone": "^0.5.21",
+    "moment-timezone": "^0.5.35",
     "nsp": "^2.8.1",
     "pre-commit": "^1.2.2",
     "should": "^11.2.1",
