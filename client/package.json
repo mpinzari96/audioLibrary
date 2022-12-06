@@ -49,7 +49,7 @@
     "superagent-use": "^0.1.0",
     "url-loader": "^0.5.8",
     "validatorjs": "^3.12.0",
-    "webpack-livereload-plugin": "^0.11.0",
+    "webpack-livereload-plugin": "^3.0.2",
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
